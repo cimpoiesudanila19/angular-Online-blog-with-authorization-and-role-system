@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUsers()
-      .subscribe(response => {
-        this.users = response['_embedded'].users;
+      .subscribe((response: { _embedded: { users: User[] } }) => {
+        this.users = response._embedded.users;
       });
   }
 }
