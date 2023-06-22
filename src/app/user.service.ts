@@ -20,4 +20,8 @@ export class UserService {
   getUsers(): Observable<UserResponse> {
     return this.http.get<UserResponse>(this.apiUrl);
   }
+
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
+  }
 }
