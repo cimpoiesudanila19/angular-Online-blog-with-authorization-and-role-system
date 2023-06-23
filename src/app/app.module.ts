@@ -14,7 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule, // Add FormsModule
+    FormsModule,
     AppRoutingModule
   ],
   providers: [UserService],
