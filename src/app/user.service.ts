@@ -42,5 +42,15 @@ getUsers(): Observable<User[]> {
 addUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
   }
-  
+
+deleteUser(userId: number): Observable<void> {
+const url = `${this.apiUrl}/${userId}`;
+return this.http.delete<void>(url);
+}
+
+updateUser(user: User): Observable<User> {
+const url = `${this.apiUrl}/${user.id}`;
+    return this.http.put<User>(url, user);
+  }
+
 }
